@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="text_igual">=</string>
+    <string name="text_ce">CE</string>
+    <string name="text_mul">&#215;</string>
+    <string name="text_div">&#247;</string>
+    <string name="text_sub">&#8722;</string>
+    <string name="text_soma">+</string>
+</resources>
