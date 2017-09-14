@@ -138,6 +138,7 @@
 
     <Button android:id="@+id/btn_ce"
         android:text="@string/text_ce"
+        android:tag="CE"
         app:layout_constraintTop_toBottomOf="@+id/btn_um"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_height="wrap_content"
@@ -147,6 +148,7 @@
         android:onClick="btnOperacao_onClick" />
     <Button android:id="@+id/btn_igual"
         android:text="@string/text_igual"
+        android:tag="CALCULAR"
         app:layout_constraintTop_toBottomOf="@+id/btn_um"
         app:layout_constraintLeft_toRightOf="@+id/btn_zero"
         android:layout_height="wrap_content"
@@ -157,6 +159,7 @@
 
     <Button android:id="@+id/btn_sub"
         android:text="@string/text_sub"
+        android:tag="SUBTRACAO"
         app:layout_constraintTop_toBottomOf="@+id/btn_soma"
         app:layout_constraintLeft_toRightOf="@+id/btn_seis"
         android:layout_height="wrap_content"
@@ -166,6 +169,7 @@
         android:onClick="btnOperacao_onClick" />
     <Button android:id="@+id/btn_div"
         android:text="@string/text_div"
+        android:tag="DIVISAO"
         app:layout_constraintTop_toBottomOf="@+id/btn_sub"
         app:layout_constraintLeft_toRightOf="@+id/btn_tres"
         android:layout_height="wrap_content"
@@ -175,6 +179,7 @@
         android:onClick="btnOperacao_onClick" />
     <Button android:id="@+id/btn_soma"
         android:text="@string/text_soma"
+        android:tag="ADICAO"
         app:layout_constraintTop_toBottomOf="@+id/edit_resultado"
         app:layout_constraintLeft_toRightOf="@+id/btn_nove"
         android:layout_height="wrap_content"
@@ -184,6 +189,7 @@
         android:onClick="btnOperacao_onClick" />
     <Button android:id="@+id/btn_mul"
         android:text="@string/text_mul"
+        android:tag="MULTIPLICACAO"
         app:layout_constraintTop_toBottomOf="@+id/btn_div"
         app:layout_constraintLeft_toRightOf="@+id/btn_igual"
         android:layout_height="wrap_content"

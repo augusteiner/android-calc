@@ -28,10 +28,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import io.augusteiner.calc.CalcCtrlr;
-import io.augusteiner.calc.android.R;
+import io.augusteiner.calc.CalculadoraException;
 
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
@@ -39,6 +40,7 @@ import io.augusteiner.calc.android.R;
 public class MainActivity extends AppCompatActivity {
 
     private CalcCtrlr ctrlr;
+    private EditText editResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         ctrlr = new CalcCtrlr();
 
+        editResultado = (EditText) findViewById(R.id.edit_resultado);
+
     }
 
     public void btnNumero_onClick(View view) {
@@ -55,20 +59,38 @@ public class MainActivity extends AppCompatActivity {
         String pNumero = ((Button) view).getText().toString();
         int numero = Integer.parseInt(pNumero);
 
-        ctrlr.acionadoNumero(numero);
+        try {
+
+            ctrlr.acionadoNumero(numero);
+
+        } catch (CalculadoraException e) {
+
+            e.printStackTrace();
+
+        }
 
         Toast.makeText(this, String.format("Número pressionado: %d", numero), Toast.LENGTH_SHORT).show();
 
+        editResultado.setText(ctrlr.getDisplay());
     }
 
     public void btnOperacao_onClick(View view) {
 
-        String pOperacao = ((Button) view).getText().toString();
+        String pOperacao = ((Button) view).getTag().toString();
 
-        ctrlr.acionadoOperacao(pOperacao);
+        try {
+
+            ctrlr.acionadaOperacao(pOperacao);
+
+        } catch (CalculadoraException e) {
+
+            e.printStackTrace();
+
+        }
 
         Toast.makeText(this, String.format("Operação pressionada: %s", pOperacao), Toast.LENGTH_SHORT).show();
 
+        editResultado.setText(ctrlr.getDisplay());
     }
 
 }
