@@ -29,7 +29,7 @@ import static io.augusteiner.calc.EOperacao.*;
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
  */
-public class CalcCtrlr {
+public class CalculadoraCtrlr {
 
     private Operador operador1;
     private Operador operador2;
@@ -40,7 +40,7 @@ public class CalcCtrlr {
 
     private final Calculadora calculadora;
 
-    public CalcCtrlr() {
+    public CalculadoraCtrlr() {
 
         this.operador1 = new Operador();
         this.operador2 = new Operador();
@@ -62,19 +62,21 @@ public class CalcCtrlr {
         display = getOperadorAtual();
     }
 
-    public void acionadaOperacao(String _operacao) throws CalculadoraException {
+    public void acionadaOperacao(EOperacao operacao) throws CalculadoraException {
 
-        EOperacao operacao = EOperacao.valueOf(_operacao);
-
-        if (operacao.equals(CE)) {
+        if (CE.equals(operacao)) {
 
             limpar();
 
-        } else if (operacao.equals(CALCULAR)) {
+        } else if (CALCULAR.equals(operacao)) {
 
             operador1 = calcular(operacaoAtual);
 
-        } else if (operacaoAtual != null) {
+        } else if (operacaoAtual == null) {
+
+            operacaoAtual = operacao;
+
+        } else {
 
             if (operador2.isNulo()) {
 
@@ -85,14 +87,17 @@ public class CalcCtrlr {
                 display = calcular(operacaoAtual);
 
                 operador1 = display;
-                acionadaOperacao(_operacao);
+                acionadaOperacao(operacao);
 
             }
 
-        } else {
-
-            operacaoAtual = operacao;
         }
+
+    }
+
+    public void acionadaOperacao(String _operacao) throws CalculadoraException {
+
+        acionadaOperacao(EOperacao.valueOf(_operacao));
 
     }
 
@@ -146,8 +151,8 @@ public class CalcCtrlr {
 
         Operador operador = operador1;
 
-        if (this.operacaoAtual != null)
-            operador = this.operador2;
+        if (operacaoAtual != null)
+            operador = operador2;
 
         return operador;
 

@@ -44,12 +44,7 @@ public class CalculadoraTest {
 
         Calculadora calc = new Calculadora();
 
-        Numero numero = calc.dividir(
-            Numero.valueOf(1),
-            Numero.valueOf(0)
-        );
-
-        System.out.println(numero);
+        calc.dividir(1, 0);
 
     }
 

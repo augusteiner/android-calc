@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package io.augusteiner.calc.android;
+package io.augusteiner.calc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,15 +31,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import io.augusteiner.calc.CalcCtrlr;
-import io.augusteiner.calc.CalculadoraException;
+import io.augusteiner.calc.R;
 
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
  */
 public class MainActivity extends AppCompatActivity {
 
-    private CalcCtrlr ctrlr;
+    private CalculadoraCtrlr ctrlr;
     private EditText editResultado;
 
     @Override
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ctrlr = new CalcCtrlr();
+        ctrlr = new CalculadoraCtrlr();
 
         editResultado = (EditText) findViewById(R.id.edit_resultado);
 
