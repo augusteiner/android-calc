@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        Toast.makeText(this, String.format("Número pressionado: %d", numero), Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, String.format("Número pressionado: %d", numero), Toast.LENGTH_SHORT).show();
 
         editResultado.setText(ctrlr.getDisplay());
     }
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        Toast.makeText(this, String.format("Operação pressionada: %s", pOperacao), Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, String.format("Operação pressionada: %s", pOperacao), Toast.LENGTH_SHORT).show();
 
         editResultado.setText(ctrlr.getDisplay());
     }
