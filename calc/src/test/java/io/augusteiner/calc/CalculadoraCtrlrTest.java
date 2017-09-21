@@ -66,6 +66,22 @@ public class CalculadoraCtrlrTest {
     //}
 
     @Test
+    public void testAcionarNumeroInferiorInvalidoJogaException() throws CalculadoraException {
+
+        thrown.expect(CalculadoraException.class);
+        ctrlr.acionadoNumero(-1);
+
+    }
+
+    @Test
+    public void testAcionarNumeroSuperiorInvalidoJogaException() throws CalculadoraException {
+
+        thrown.expect(CalculadoraException.class);
+        ctrlr.acionadoNumero(10);
+
+    }
+
+    @Test
     public void testSubtracaoComResultadoNegativo() throws CalculadoraException {
 
         ctrlr.acionadoNumero(1);
