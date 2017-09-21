@@ -66,6 +66,18 @@ public class CalculadoraCtrlrTest {
     //}
 
     @Test
+    public void testSubtracaoComResultadoNegativo() throws CalculadoraException {
+
+        ctrlr.acionadoNumero(1);
+        ctrlr.acionadaOperacao(SUBTRACAO);
+        ctrlr.acionadoNumero(3);
+        ctrlr.acionadaOperacao(CALCULAR);
+
+        assertEquals("-2", ctrlr.getDisplay());
+
+    }
+
+    @Test
     public void testSomaInteira() throws CalculadoraException {
 
         ctrlr.acionadoNumero(1);

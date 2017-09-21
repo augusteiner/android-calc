@@ -85,7 +85,7 @@ class Operador implements Cloneable {
 
     public void limpar() {
 
-        buffer = new StringBuilder("0");
+        buffer = new StringBuilder("");
         hasSeparador = false;
         isNulo = true;
     }
